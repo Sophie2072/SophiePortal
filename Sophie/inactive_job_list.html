@@ -3,7 +3,7 @@
 {% block navbar-jobs %}active{% endblock navbar-jobs %}
 {% block title %}Inactive Jobs{% endblock title %}
 {% block css %}
-    <link rel="stylesheet" href="{% static 'mis/css/datatables.min.css' %}">      # 引入css页面。 datatables是JS插件
+    <link rel="stylesheet" href="{% static 'mis/css/datatables.min.css' %}">
 {% endblock css %}
 {% block content %}
     <div class="row pb-5">
@@ -21,19 +21,17 @@
         <thead class="thead-dark">
             <th scope="col">Number</th>
             <th scope="col">Name</th>
-            <th scope="col">Client</th>
             <th scope="col">Status</th>
-            <th scope="col">Project Lead</th>
         </thead>
     </table>
 {% endblock content %}
 {% block last_script %}
-<script src="{% static 'mis/js/datatables.min.js' %}"></script>      # 引入JS页面
+<script src="{% static 'mis/js/datatables.min.js' %}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#table').DataTable({       # datatables通过此命令启动
-            'serverSide': true,      # 是否开启服务器模式
-            'processing': true,      # 是否显示处理状态
+        $('#table').DataTable({
+            'serverSide': true,
+            'processing': true,
             'language': {
                 'processing': '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>'
             },
@@ -41,7 +39,7 @@
             "order": [[0, "desc"]],
             'ajax': '/api/external_job/?format=datatables',
 
-            'columns': [     # 设置列的数据源
+            'columns': [
                 {
                     'data': 'number',
                     'fnCreatedCell': function (cell, cellData, rowData, rowIndex, colIndex)
@@ -55,19 +53,8 @@
                     'defaultContent': ''
                 },
                 {
-                    'data': 'client.name',
-                    'defaultContent': ''
-                },
-                {
                     'data': 'status.name',
                     'defaultContent': ''
-                },
-                {
-                    'data': 'lead.forename',
-                    'defaultContent': '',
-                    /*'render': function ( data, type, row ) {
-                        if (data == null) {return ''};
-                        return data.forename +' '+ data.surname;},*/
                 },
                 {
                     'data': 'id',

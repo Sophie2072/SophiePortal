@@ -1,0 +1,80 @@
+{% extends "mis/base.html" %}
+{% load static %}
+{% block navbar-jobs %}active{% endblock navbar-jobs %}
+{% block title %}Inactive Jobs{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'mis/css/datatables.min.css' %}">      # 引入css页面。 datatables是JS插件
+{% endblock css %}
+{% block content %}
+    <div class="row pb-5">
+        <div class="col align-items-end">
+            <h1>Inactive Jobs</h1>
+        </div>
+        <div class="col text-right">
+            <h3><a class="text-primary" href="{% url 'job_create' %}">
+                <i class="fas fa-plus-circle"></i>
+                Add New
+            </a></h3>
+        </div>
+    </div>
+    <table id="table" class="table table-hover">
+        <thead class="thead-dark">
+            <th scope="col">Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Client</th>
+            <th scope="col">Status</th>
+            <th scope="col">Project Lead</th>
+        </thead>
+    </table>
+{% endblock content %}
+{% block last_script %}
+<script src="{% static 'mis/js/datatables.min.js' %}"></script>      # 引入JS页面
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').DataTable({       # datatables通过此命令启动
+            'serverSide': true,      # 是否开启服务器模式
+            'processing': true,      # 是否显示处理状态
+            'language': {
+                'processing': '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>'
+            },
+            "autoWidth": false,
+            "order": [[0, "desc"]],
+            'ajax': '/api/external_job/?format=datatables',
+
+            'columns': [     # 设置列的数据源
+                {
+                    'data': 'number',
+                    'fnCreatedCell': function (cell, cellData, rowData, rowIndex, colIndex)
+                        {
+                            $(cell).html("<a href='/job/"+rowData.id+"'>#"+rowData.number+"</a>");
+                        },
+                    'className': "h5"
+                },
+                {
+                    'data': 'name',
+                    'defaultContent': ''
+                },
+                {
+                    'data': 'client.name',
+                    'defaultContent': ''
+                },
+                {
+                    'data': 'status.name',
+                    'defaultContent': ''
+                },
+                {
+                    'data': 'lead.forename',
+                    'defaultContent': '',
+                    /*'render': function ( data, type, row ) {
+                        if (data == null) {return ''};
+                        return data.forename +' '+ data.surname;},*/
+                },
+                {
+                    'data': 'id',
+                    'visible': false
+                },
+            ]
+        });
+    });
+</script>
+{% endblock last_script %}

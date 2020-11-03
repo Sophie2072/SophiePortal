@@ -85,4 +85,10 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="-1082" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1604372477165">
+      <screen x="-1920" y="4" width="1920" height="1040" />
+    </state>
+    <state x="-1082" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1604372477165" />
+  </component>
 </project>

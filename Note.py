@@ -22,3 +22,5 @@ def test_with_available_sample(self):
                  "state": "Test",
                  "old_status": "A"}
     })
+
+#    always refer to the choice itself when possible

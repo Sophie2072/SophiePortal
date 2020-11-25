@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f2b46e8-776e-44b0-bd6e-145566f34083" name="Default Changelist" comment="" />
+    <list default="true" id="48350533-d82e-434a-be8d-416cc2e6d377" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,11 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
-  </component>
-  <component name="ProjectId" id="1jArCVgvsP1Vtd3VUizVpCZx00j" />
+  <component name="ProjectId" id="1klZF2wTVSjGfGegviFRDpXiMox" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,112 +27,25 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Sophie" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.try">
-    <configuration name="try" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python-Django-Website" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sophie" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sophie/try.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Python-Django-Website" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sophie/survey" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sophie/survey/urls.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.urls" />
-      <item itemvalue="Python.try" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.try" />
-        <item itemvalue="Python.urls" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6f2b46e8-776e-44b0-bd6e-145566f34083" name="Default Changelist" comment="" />
-      <created>1603257609259</created>
+      <changelist id="48350533-d82e-434a-be8d-416cc2e6d377" name="Default Changelist" comment="" />
+      <created>1606277030844</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1603257609259</updated>
+      <updated>1606277030844</updated>
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="-965" y="301" key="FileChooserDialogImpl" timestamp="1605671762919">
-      <screen x="-1920" y="4" width="1920" height="1040" />
+    <state x="719" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606281571488">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-965" y="301" key="FileChooserDialogImpl/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1605671762919" />
-    <state width="981" height="279" key="GridCell.Tab.0.bottom" timestamp="1605679309539">
-      <screen x="-1920" y="4" width="1920" height="1040" />
+    <state x="719" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.4.1920.1040@0.0.1920.1040" timestamp="1606281571488" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1606279706678">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="981" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1605679309539" />
-    <state width="981" height="279" key="GridCell.Tab.0.center" timestamp="1605679309539">
-      <screen x="-1920" y="4" width="1920" height="1040" />
-    </state>
-    <state width="981" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1605679309539" />
-    <state width="981" height="279" key="GridCell.Tab.0.left" timestamp="1605679309539">
-      <screen x="-1920" y="4" width="1920" height="1040" />
-    </state>
-    <state width="981" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1605679309539" />
-    <state width="981" height="279" key="GridCell.Tab.0.right" timestamp="1605679309539">
-      <screen x="-1920" y="4" width="1920" height="1040" />
-    </state>
-    <state width="981" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1605679309539" />
-    <state x="-1082" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1604372477165">
-      <screen x="-1920" y="4" width="1920" height="1040" />
-    </state>
-    <state x="-1082" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.4.1920.1040@-1920.4.1920.1040" timestamp="1604372477165" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.4.1920.1040@0.0.1920.1040" timestamp="1606279706678" />
   </component>
 </project>

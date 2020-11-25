@@ -7,6 +7,9 @@ class Staff(models.Model):
     email = models.EmailField()
     address = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Member(models.Model):
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
@@ -16,8 +19,15 @@ class Member(models.Model):
     email = models.EmailField()
     address = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.number
+
+
 class Card(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
     category = models.CharField()
     date = models.DateTimeField('date published')
+
+    def __str__(self):
+        return self.category
 

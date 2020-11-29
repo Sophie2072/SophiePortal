@@ -13,7 +13,7 @@ class Staff(models.Model):
 
 class Member(models.Model):
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
-    card = models.ForeignKey(Card,on_delete=models.CASCADE)
+    #card = models.ForeignKey(Card,on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     number = models.IntegerField(default=0, max_length=11)
     email = models.EmailField()

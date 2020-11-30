@@ -25,7 +25,7 @@ class Member(models.Model):
 
 class Card(models.Model):
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    category = models.CharField()
+    category = models.CharField(max_length=150)
     date = models.DateTimeField('date published')
 
     def __str__(self):

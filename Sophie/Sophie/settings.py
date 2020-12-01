@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cliodb',
-        'HOST': '/cloudsql/deep-sun-297210:australia-southeast1:cliodb',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'Xiechengzhu',

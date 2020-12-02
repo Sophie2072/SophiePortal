@@ -65,4 +65,3 @@ class Team(models.Model):
 
 class Role(models.Model):
     title = models.CharField(max_length=150)
-    

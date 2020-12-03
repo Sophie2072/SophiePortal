@@ -29,7 +29,7 @@ class Member(models.Model):
     number = models.CharField("Mobile Number", max_length=15)
     email = models.EmailField("Email")
     address = models.CharField(max_length=200, default="")
-    balance = models.BigIntegerField(default=0)
+    balance = models.DecimalField(max_digits=6, decimal_places=2)
     first_card = models.ForeignKey(
         "Card", on_delete=models.SET_NULL, null=True, related_name="first_card"
     )
@@ -45,9 +45,9 @@ class Member(models.Model):
 
 class Card(models.Model):
     category = models.CharField(max_length=150)
-    value = models.BigIntegerField(default=0)
-    cost = models.BigIntegerField(default=0)
-    balance = models.BigIntegerField(default=0)
+    value = models.DecimalField(max_digits=6, decimal_places=2)
+    cost = models.DecimalField(max_digits=6, decimal_places=2)
+    balance = models.DecimalField(max_digits=6, decimal_places=2)
     start = models.DateTimeField("Start Time", default="")
     end = models.DateTimeField("End Time", default="")
     notes = models.CharField(max_length=300, default="")

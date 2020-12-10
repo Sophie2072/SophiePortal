@@ -1,0 +1,169 @@
+{% extends "mis/base.html" %}
+{% block title %}#{{ job.number }} - PM Checklist{% endblock title %}
+{% block content %}
+    <h1 class="text-primary"><strong>#{{ job.number }}</strong>: {{ job.name }}</h1>
+    <h2 class="text-secondary pb-3">Project Management Checklist</h2>
+    <div class="col">
+        <form method="get" target="_blank">
+            <div class="accordion" id="outerAccordion">
+            {% for parent in checklist_parents %}
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#c{{ parent.id }}">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h4>{{parent.id}}.{{parent.name}}</h4>
+                                </div>
+                                <div class="col-3 col-md-2 col-lg-1 text-right">
+                                    <span class="outOf"><strong>0/0</strong></span>
+                                </div>
+                                <div class="col-9 col-md-4 col-lg-5">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div id="c{{ parent.id }}" class="collapse" data-parent="#outerAccordion">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                {% for child in checklist_item %}
+                                    {% if child.parent.id == parent.id %}
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="{{child.code}}" name="{{child.code}}">
+                                            <label class="custom-control-label" for="{{child.code}}"><strong>{{child.code}}.</strong>{{ child.name }}</label>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" name="button" class="btn btn-sm btn-primary select-all">Select All</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+    <h4 class="pt-5 pb-3">Checklist Notes</h4>
+    <textarea class="form-control" id="notes" rows="10"></textarea>
+{% endblock content %}
+{% block last_script %}
+<script type="text/javascript">
+    function updateData () {
+        $.ajax({
+            type: "GET",
+            url: 'api/',
+            success: function (response) {
+                $('input:checkbox').prop("checked", true);
+
+            }
+        });
+    }
+
+    $(document).ready(functionn() {
+        updateData()
+    });
+
+    $('input:checkbox').on("change", function() {
+        var checkbox = $(this)
+        $.ajax({
+            type: "POST",
+            url: 'api/',
+            data: {
+                checkbox: checkbox.attr('id'),
+                checked: checkbox.is(':checked'),
+            },
+            success: {
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
+
+
+
+
+
+
+    function updateCounter (card) {
+        var checked = card.find('input[type="checkbox"]:checked').length;
+        var total = card.find('input[type="checkbox"]').length;
+        var perc = 100 * (checked / total)
+        var text = card.find('.outOf').first()
+        var bar = card.find('.progress-bar').first()
+        text.html('<strong>' + checked + '/' + total + '</strong>')
+        bar.css('width', perc.toFixed(2) + '%')
+        if (checked === total) {
+            bar.addClass('bg-success').removeClass('bg-info');
+        } else {
+            bar.addClass('bg-info').removeClass('bg-success');
+        }
+        if (card.find('.select-all').length === 1) {
+            var button = card.find('.select-all');
+            if (checked === total) {
+                button.html('Select None');
+            } else {
+                button.html('Select All');
+            }
+        }
+        if (card.parent().attr('id') === 'innerAccordion') {
+            updateCounter(card.parents('.card').first())
+        }
+    $( document ).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: 'api/note/',
+            success: function (response) {
+                $('#notes').val(response.data)
+            },
+            error: function () {
+               alert("Unable to load notes");
+            }
+        });
+    });
+    $('.select-all').on("click", function() {
+        var button = $(this)
+        var card = button.closest('.card');
+        var ids = [];
+        var check = button.html() === "Select All"
+        card.find('input[type="checkbox"]').each(function () {
+            var checkbox = $(this);
+            ids.push(checkbox.attr('id'));
+            checkbox.prop("checked", check);
+        });
+        updateCounter(card);
+        $.ajax({
+            type: "POST",
+            url: 'api/',
+            data: {
+                checkbox: ids,
+                checked: check,
+            },
+            success: function () {
+                updateData();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
+    $('#notes').on('input', function () {
+        $.ajax({
+            type: "POST",
+            url: 'api/note/',
+            data: {
+                note: $('#notes').val(),
+            },
+            error: function () {
+               alert("Unable to save notes");
+            }
+        });
+    });
+</script>
+{% endblock last_script %}
